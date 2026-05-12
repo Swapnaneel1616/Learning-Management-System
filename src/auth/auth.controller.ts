@@ -1,5 +1,7 @@
-import { Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { register } from 'module';
+import { RegisterDTO } from './dto/registerUser.dto';
 
 @Controller('auth') // Prefix (route) for all routes in this controller 
 export class AuthController {
@@ -9,8 +11,8 @@ export class AuthController {
 
 
     @Post("register")
-    register(){
-        //Logic for user register 
-        return this.authService.registerUser();
+    register(@Body() registerUserDTO: RegisterDTO){
+        //Logic for user register  
+        return this.authService.registerUser(registerUserDTO);
     }
 }
