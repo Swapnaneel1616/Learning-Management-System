@@ -26,6 +26,11 @@ export class AuthService {
 
 
 
-        return this.userService.createUser({...registerUserDTO, password: hash} );
+        const user = await this.userService.createUser({
+            ...registerUserDTO, password: hash} );
+
+
+        console.log(user)
+        return {};
     }
 }
