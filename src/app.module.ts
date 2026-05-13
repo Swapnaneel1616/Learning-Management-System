@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { CourseModule } from './course/course.module';
 
 setServers(['1.1.1.1', '8.8.8.8']);
 
@@ -25,6 +26,7 @@ setServers(['1.1.1.1', '8.8.8.8']);
     }),
     AuthModule,
     UserModule,
+    CourseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
