@@ -19,11 +19,14 @@ export class UserService {
         }
         catch(err){
             console.log(err)
-
-            if(err.code === 11000){
+            const DUPLICATE_KEY_CODE = 11000;
+            if(err.code === DUPLICATE_KEY_CODE){
                 throw new ConflictException("Email already exists");
             }
+            throw err; // Re-throw other errors
         }
     }
+
+    
 
 }
